@@ -22,12 +22,6 @@ export default function Logo() {
             <h1 id="logo-title">SUPER FIGTHERS</h1>
             <p className='logo-subtitle'>The one reward pool with the fiercest</p>
             <p className='logo-subtitle'>daily return and the lowest dev fee</p>
-            {/* <ReactArcText
-                text={"SUPER FIGTHERS"}
-                direction={1}
-                arc={160}
-                class={"logo-title"}
-            /> */}
         </div>
     )
 }
