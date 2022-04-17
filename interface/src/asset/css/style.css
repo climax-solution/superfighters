@@ -1,0 +1,40 @@
+@font-face {
+    font-family: SigleFighter;
+    src: url('../font/SingleFighter-Yz3qL.otf') format("opentype");
+}
+
+body {
+    background-color: #000;
+}
+
+.logo {
+    position: relative;
+}
+
+#logo-title {
+    font-family: SigleFighter;
+    color: #f81b00;
+    font-size: 70px;
+    text-align: center;
+    word-spacing: 20px;
+}
+
+.logo-subtitle {
+    font-family: SigleFighter;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 0;
+    word-spacing: 5px;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+}
+
+.logo-subtitle:nth-child(3) {
+    margin-top: 30px;
+}
+
+#cool {
+    fill: none;
+}
