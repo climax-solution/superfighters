@@ -8,7 +8,7 @@ export default function Logo() {
         const subTitle = document.getElementsByClassName('logo-subtitle');
 
         const logoText = new ArcText(mainTitle);
-        logoText.arc(1000);
+        logoText.arc(700);
 
         for (let i = 0; i < subTitle.length; i ++) {
             const subLogoText = new ArcText(subTitle[i]);
@@ -18,10 +18,13 @@ export default function Logo() {
     },[])
 
     return (
-        <div className="logo">
-            <h1 id="logo-title">SUPER FIGTHERS</h1>
-            <p className='logo-subtitle'>The one reward pool with the fiercest</p>
-            <p className='logo-subtitle'>daily return and the lowest dev fee</p>
-        </div>
+        <>
+            <div className="logo">
+                <h1 id="logo-title">SUPER FIGHTERS</h1>
+                <p className='logo-subtitle'>The one reward pool with the fiercest</p>
+                <p className='logo-subtitle'>daily return and the lowest dev fee</p>
+            </div>
+            <button className='btn btn-primary bg-main connect-btn'>CONNECT</button>
+        </>
     )
 }

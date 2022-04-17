@@ -62,3 +62,22 @@
     color: white;
     margin-top: 10px;
 }
+
+.social-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    grid-gap: 20px;
+}
+
+.social-link {
+    background-color: #f81b00;
+    padding: 15px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.social-link i {
+    color: white;
+    font-size: 20px;
+}

@@ -1,0 +1,42 @@
+.brand-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    top: 50px;
+    position: relative;
+    z-index: -10;
+}
+
+.brand-boxing {
+    filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.3));
+    width: 600px;
+    position: absolute;
+    top: 0;
+}
+
+.punch {
+    transform: scaleX(-1);
+    left: -70px;
+    top: 150px;
+}
+
+.fire {
+    width: 300px;
+    transform: scaleX(-1);
+    position: absolute;
+    right: 25%;
+    top: 150px;
+    filter: brightness(50%);
+    z-index: 1;
+}
+
+.foot {
+    right: 5%;
+}
+
+@media screen and (max-width: 978px) {
+    .brand-container {
+        display: none;
+    }
+}

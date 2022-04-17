@@ -1,4 +1,5 @@
 import Referral from "./referral";
+import SocialLink from "./social";
 import Stake from "./stake";
 import Static from "./static";
 import "./style.css";
@@ -9,6 +10,7 @@ export default function Staking() {
             <Stake/>
             <Static/>
             <Referral/>
+            <SocialLink/>
         </div>
     )
 }

@@ -29,6 +29,7 @@ body {
     word-spacing: 5px;
     position: absolute;
     width: 100%;
+    top: 90px;
 }
 
 .logo-subtitle:nth-child(3) {
@@ -37,4 +38,20 @@ body {
 
 #cool {
     fill: none;
+}
+
+.connect-btn {
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    #logo-title {
+        font-size: 40px;
+    }
+    .logo-subtitle {
+        font-size: 16px;
+    }
 }
