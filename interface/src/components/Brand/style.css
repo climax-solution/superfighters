@@ -9,7 +9,7 @@
 }
 
 .brand-boxing {
-    filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.2)) brightness(40%);
     width: 600px;
     position: absolute;
     top: 0;
@@ -27,7 +27,7 @@
     position: absolute;
     right: 25%;
     top: 150px;
-    filter: brightness(50%);
+    filter: brightness(8%);
     z-index: 1;
 }
 
