@@ -1,5 +1,5 @@
-const BakedBeans = artifacts.require("BakedBeans");
+const SuperFighters = artifacts.require("SuperFighters");
 
 module.exports = function (deployer) {
-  deployer.deploy(BakedBeans);
+  deployer.deploy(SuperFighters);
 };
