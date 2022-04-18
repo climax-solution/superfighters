@@ -1,8 +1,17 @@
-import { useEffect } from 'react';
+import AWN from "awesome-notifications";
+import { useEffect, useState } from 'react';
 import CircleType from 'circletype';
 
+const notify = new AWN({
+    position: "top-right",
+    animationDuration: 100,
+    durations: {
+        global: 2000
+    }
+});
 export default function Logo() {
     
+    const [walletAddress, setWalletAddress] = useState('');
     useEffect(() => {
         const subTitle = document.getElementsByClassName('logo-subtitle');
         for (let i = 0; i < subTitle.length; i ++) {
@@ -11,6 +20,23 @@ export default function Logo() {
         }
 
     },[])
+
+    const connectWallet = async() => {
+        if (window.ethereum) {
+            try {
+                const accounts = await window.ethereum.request({
+                    method: "eth_requestAccounts"
+                });
+                setWalletAddress(accounts[0]);
+            } catch(err) {
+                if (err?.code == -32002) {
+                    notify.warning("Already requested connect. Please check your walelt");
+                }
+            }
+        } else {
+            notify.warning("Please install Metamask");
+        }
+    }
 
     return (
         <>
@@ -37,7 +63,10 @@ export default function Logo() {
             </div>
             
 
-            <button className='btn btn-primary bg-main connect-btn'>CONNECT</button>
+            <button
+                className='btn btn-primary bg-main connect-btn'
+                onClick={() => walletAddress ? null : connectWallet()}
+            >{walletAddress ? walletAddress.substr(0,6) + '...' + walletAddress.substr(-4) : "CONNECT"}</button>
         </>
     )
 }

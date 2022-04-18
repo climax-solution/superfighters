@@ -3,6 +3,7 @@ import Brand from './components/Brand';
 import Logo from './components/Logo';
 import Staking from './components/Staking';
 
+import "awesome-notifications/src/styles/style.scss";
 function App() {
   return (
     <>

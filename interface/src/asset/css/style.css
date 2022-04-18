@@ -42,7 +42,7 @@ body {
 }
 
 .connect-btn {
-    width: 100px;
+    min-width: 100px;
     position: absolute;
     right: 0;
     top: 20px;
