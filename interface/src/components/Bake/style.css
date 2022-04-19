@@ -1,6 +1,6 @@
 .staking-container {
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     margin: auto;
 }
 
@@ -70,9 +70,11 @@
 
 .referral-link {
     border: 2px solid #f81b00;
-    border-radius: 15px;
-    padding: 10px;
+    padding: 10px 2px;
     height: 40px;
+    text-align: center;
+    font-size: 10px;
+    color: white;
 }
 
 .referral-note {

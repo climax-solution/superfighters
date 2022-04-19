@@ -1,16 +1,9 @@
-import AWN from "awesome-notifications";
 import { useEffect, useState } from 'react';
 import CircleType from 'circletype';
 import { useDispatch, useSelector } from "react-redux";
 import { update_wallet } from "../../store/action/wallet.action";
+import notify from "../../utils/notify";
 
-const notify = new AWN({
-    position: "top-right",
-    animationDuration: 100,
-    durations: {
-        global: 2000
-    }
-});
 export default function Logo() {
     
     const dispatch = useDispatch();
