@@ -1,6 +1,6 @@
 import Web3 from "web3";
 import ABI from "../config/abi.json";
-import { address } from "../config/address.json";
+import { baked_addr } from "../config/address.json";
 
 // const node = [
 //   'https://bsc-dataseed.binance.org',
@@ -40,7 +40,7 @@ const getWeb3 = async() => {
     //console.log("No _web3 instance injected, using Infura/Local _web3.");
   }
 
-  const superFighter = new _web3.eth.Contract(ABI, address);
+  const superFighter = new _web3.eth.Contract(ABI, baked_addr);
 
   return { _web3, superFighter };
 }
