@@ -1,13 +1,13 @@
 import Referral from "./referral";
 import SocialLink from "./social";
-import Stake from "./stake";
+import Bake from "./bake";
 import Static from "./static";
 import "./style.css";
 
 export default function Staking() {
     return (
         <div className="staking-container">
-            <Stake/>
+            <Bake/>
             <Static/>
             <Referral/>
             <SocialLink/>

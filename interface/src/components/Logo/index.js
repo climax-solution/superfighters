@@ -1,6 +1,8 @@
 import AWN from "awesome-notifications";
 import { useEffect, useState } from 'react';
 import CircleType from 'circletype';
+import { useDispatch, useSelector } from "react-redux";
+import { update_wallet } from "../../store/action/wallet.action";
 
 const notify = new AWN({
     position: "top-right",
@@ -11,7 +13,8 @@ const notify = new AWN({
 });
 export default function Logo() {
     
-    const [walletAddress, setWalletAddress] = useState('');
+    const dispatch = useDispatch();
+    const walletAddress = useSelector(({ wallet }) => wallet.walletAddress);
     useEffect(() => {
         const subTitle = document.getElementsByClassName('logo-subtitle');
         for (let i = 0; i < subTitle.length; i ++) {
@@ -27,7 +30,7 @@ export default function Logo() {
                 const accounts = await window.ethereum.request({
                     method: "eth_requestAccounts"
                 });
-                setWalletAddress(accounts[0]);
+                dispatch(update_wallet(accounts[0]));
             } catch(err) {
                 if (err?.code == -32002) {
                     notify.warning("Already requested connect. Please check your walelt");

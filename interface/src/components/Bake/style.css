@@ -4,16 +4,33 @@
     margin: auto;
 }
 
-.stake-panel, .static-panel, .referral-panel {
+.bake-panel, .static-panel, .referral-panel {
     border: 2px solid #f81b00;
     border-radius: 20px;
     padding: 25px;
 }
 
-.stake-input {
+.bake-input {
     border: 2px solid #f81b00;
     background-color: transparent !important;
+    -moz-appearance: textfield;
     text-align: center;
+}
+
+.bake-input::-webkit-inner-spin-button, 
+.bake-input::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+.bake-input-ref {
+    position: relative;
+}
+.bake-input-cur {
+    position: absolute;
+    color: #f81b00;
+    top: 2px;
+    right: 10px;
+    font-size: 24px;
 }
 
 .pool-item, .reward-amount {
