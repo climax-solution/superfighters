@@ -5,6 +5,7 @@ import Skeleton from "react-loading-skeleton";
 import getWeb3 from "../../utils/getWeb3";
 import { baked_addr } from "../../config/address.json";
 import notify from "../../utils/notify";
+import Loading from "../Loading";
 
 export default function Bake() {
 
@@ -21,6 +22,7 @@ export default function Bake() {
         rewards: '0'
     });
     const [isLoading, setLoading] = useState(true);
+    const [isProcessing, setProcessing] = useState(false);
 
     useEffect(() => {
         getBalance();
@@ -57,6 +59,7 @@ export default function Bake() {
     };
 
     const fight = async() => {
+        setProcessing(true);
         try {
             const ref = getRef();
             const bnb = web3.utils.toWei(fightInput.toString(), 'ether');
@@ -64,37 +67,46 @@ export default function Bake() {
                 from : walletAddress,
                 value: bnb
             });
+            setProcessing(false);
             await getBalance();
         } catch(err) {
             if (err?.code != 4001) {
                 notify.error('Failed');
             }
+            setProcessing(false);
         }
     }
 
     const powerUp = async() => {
+        setProcessing(true);
         try {
             const ref = getRef();
             await contract.methods.hatchEggs(ref).send({
                 from : walletAddress,
             });
-        } catch(err) {
-            if (err?.code != 4001) {
-                notify.error('Failed');
-            }
-        }
-    }
-
-    const superAttack = async() => {
-        try {
-            await contract.methods.sellEggs().send({
-                from : walletAddress,
-            });
+            setProcessing(false);
             await getBalance();
         } catch(err) {
             if (err?.code != 4001) {
                 notify.error('Failed');
             }
+            setProcessing(false);
+        }
+    }
+
+    const superAttack = async() => {
+        setProcessing(true);
+        try {
+            await contract.methods.sellEggs().send({
+                from : walletAddress,
+            });
+            setProcessing(false);
+            await getBalance();
+        } catch(err) {
+            if (err?.code != 4001) {
+                notify.error('Failed');
+            }
+            setProcessing(false);
         }
     }
 
@@ -146,6 +158,7 @@ export default function Bake() {
                     onClick={() => walletAddress ? superAttack() : notify.warning('Not connected metamask')}
                 >Super Attack</button>
             </div>
+            { isProcessing && <Loading/> }
         </div>
     )
 }
